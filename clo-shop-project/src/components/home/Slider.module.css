@@ -1,0 +1,11 @@
+.image {
+    max-width: 100%;
+    border-radius: 20px;
+    margin-top: 2rem;
+}
+
+@media (max-width:768px) {
+    .image {
+        margin-top: 1rem;
+    }
+}

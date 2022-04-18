@@ -1,0 +1,32 @@
+.Categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.Categories a {
+    flex: 0 0 25%;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.Categories a:hover {
+    transform: translateY(-10px);
+}
+
+.Categories a:hover p {
+    color: #5463FF;
+}
+
+.Categories p {
+    color: #666;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media (max-width:768px) {
+    .Categories {
+        margin-top: 1rem;
+    }
+}
