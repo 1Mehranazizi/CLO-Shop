@@ -4,6 +4,7 @@ import React from "react";
 import Slider from "./home/Slider";
 import Categories from "./home/Categories";
 import SpecialOffers from "./home/SpecialOffers";
+import LatestProducts from "./home/LatestProducts";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Slider />
       <Categories />
       <SpecialOffers />
+      <LatestProducts />
     </div>
   );
 };

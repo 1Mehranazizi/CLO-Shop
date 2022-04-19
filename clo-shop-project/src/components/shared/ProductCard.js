@@ -24,7 +24,7 @@ const ProductCard = ({ data }) => {
     <div className={styles.productCard}>
       <div className={styles.cardImage}>
         <img src={data.image} alt={data.title} />
-        {data.discount && (
+        {data.discount > 0 && (
           <span className={styles.discount}>{data.discount}%</span>
         )}
       </div>
@@ -36,13 +36,13 @@ const ProductCard = ({ data }) => {
         <div className={styles.star}>
             <div className={styles.rating} style={{width:`${rateHandler(data.rate)}`}}></div>
         </div>
-        <div>
+        <div className={styles.prieContainer}>
           <p className={data.discount ? styles.oldPrice : styles.price}>
-            {data.price.toLocaleString()} تومان
+            {data.price.toLocaleString()} <span>تومان</span> 
           </p>
-          {data.discount && (
+          {data.discount > 0 && (
             <p className={styles.price}>
-              {discountHandler(data.discount, data.price)}تومان
+              {discountHandler(data.discount, data.price)} <span>تومان</span>
             </p>
           )}
         </div>

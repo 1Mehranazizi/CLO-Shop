@@ -59,12 +59,20 @@
   font-family: iranyekan;
 }
 
+.prieContainer {
+  position: relative;
+}
+
 .price {
   color: #666;
   font-family: iranyekan;
 }
 
 .oldPrice {
+  display: flex;
+  top: -20px;
+  left: 0;
+  position: absolute;
   color: #bbbbbb;
   font-family: iranyekan;
   text-decoration: line-through;

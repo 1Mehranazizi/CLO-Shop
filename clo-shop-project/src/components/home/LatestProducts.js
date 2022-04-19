@@ -16,14 +16,15 @@ import { ProductsContext } from "../../context/ProductsContextProvider";
 //Components
 import ProductCard from "../shared/ProductCard";
 
-const SpecialOffers = () => {
+const LatestProducts = () => {
   const data = useContext(ProductsContext);
-  const specialPro = data.filter((item) => item.discount > 0);
+  data.sort((a, b) => parseFloat(b.date) - parseFloat(a.date));
+  const newData = data.slice(0, 8);
   return (
     <div className="carousel-slider">
       <div className="title-homepage">
-        <h2>پیشنهادات ویژه</h2>
-        <small>Special offers</small>
+        <h2>جدیدترین محصولات</h2>
+        <small>Latest Products</small>
       </div>
       <Swiper
         breakpoints={{
@@ -49,7 +50,7 @@ const SpecialOffers = () => {
         loop={true}
         rtl={"true"}
       >
-        {specialPro.map((product) => (
+        {newData.map((product) => (
           <SwiperSlide key={product.id}>
             <ProductCard data={product} />
           </SwiperSlide>
@@ -59,4 +60,4 @@ const SpecialOffers = () => {
   );
 };
 
-export default SpecialOffers;
+export default LatestProducts;
