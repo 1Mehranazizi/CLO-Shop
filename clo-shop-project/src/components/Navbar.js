@@ -19,7 +19,7 @@ const Navbar = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.topheader}>
-          <div className={styles.hamburger} onClick={() => setMenu(!menu)}>
+          <div className={menu ? styles.hamburgerOpen : styles.hamburger} onClick={() => setMenu(!menu)}>
             <img src={menu ? cross : hamburger} alt="hamburger" />
           </div>
         <div className={styles.logo}>
