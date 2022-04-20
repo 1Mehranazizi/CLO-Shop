@@ -37,8 +37,8 @@ const SpecialOffers = () => {
           },
           360: {
             width: 350,
-            slidesPerView: 1,
-            spaceBetween: 10,
+            slidesPerView: 1.3,
+            spaceBetween: 20,
           },
         }}
         modules={[Navigation, Pagination]}

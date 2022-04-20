@@ -116,3 +116,9 @@
   font-weight: 900;
   color:#FFC300;
 }
+
+@media (max-width:560px) {
+  .cardImage img {
+    width: 250px;
+  }
+}
