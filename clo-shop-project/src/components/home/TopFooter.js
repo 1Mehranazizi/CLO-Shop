@@ -30,7 +30,7 @@ const TopFooter = () => {
             </a>
             <a href="/" target="_blank" className={styles.telegram}>
               تلگرام
-              <i class="fab fa-telegram-plane"></i>
+              <i className="fab fa-telegram-plane"></i>
             </a>
           </div>
         </div>

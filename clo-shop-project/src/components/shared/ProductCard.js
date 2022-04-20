@@ -47,7 +47,7 @@ const ProductCard = ({ data }) => {
           )}
         </div>
       </div>
-      <Link to="/" className={styles.productDetails}>
+      <Link to={`/products/${data.id}`} className={styles.productDetails}>
         مشاهده محصول
       </Link>
     </div>
