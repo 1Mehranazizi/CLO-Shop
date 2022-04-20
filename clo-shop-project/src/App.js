@@ -4,6 +4,7 @@ import { Route , Routes , Navigate } from "react-router-dom";
 import ProductsContextProvider from "./context/ProductsContextProvider";
 import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
+        <Footer />
       </ProductsContextProvider>
     </div>
   );
