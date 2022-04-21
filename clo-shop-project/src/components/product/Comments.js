@@ -29,7 +29,7 @@ const Comments = () => {
         </div>
         <textarea cols="30" rows="5" placeholder="نظر شما..."></textarea>
         <div className={styles.button}>
-            <button type="submit">ارسال</button>
+          <button type="submit">ارسال</button>
         </div>
       </form>
     </div>

@@ -10,6 +10,7 @@ import ProductDetails from "./product/ProductDetails";
 import ProductInfo from "./product/ProductInfo";
 import Comments from "./product/Comments";
 import Loading from "./shared/Loading";
+import RelatedProduct from "./product/RelatedProduct";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -23,6 +24,9 @@ const ProductsPage = () => {
 
   const id = useParams().id;
   const product = products[id - 1];
+  const relatedPro = products.filter(
+    (item) => item.category === product.category
+  );
   return product ? (
     <div className="products-page">
       <div className="container">
@@ -42,6 +46,7 @@ const ProductsPage = () => {
         />
         <ProductInfo description={product.description} />
         <Comments />
+        <RelatedProduct data={relatedPro} />
       </div>
     </div>
   ) : (
