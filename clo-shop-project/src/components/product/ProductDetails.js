@@ -41,6 +41,7 @@ const ProductDetails = ({
       <div className={styles.details}>
         <div className={styles.rightDetails}>
           <h2 className={styles.title}>{title}</h2>
+          <small className={styles.category}>{category}</small>
           <div className={styles.rate}>
             <div
               className={styles.rating}

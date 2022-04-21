@@ -7,6 +7,7 @@ import { productsAPI } from "../services/api";
 //Components
 import BreadCrumb from "./product/BreadCrumb";
 import ProductDetails from "./product/ProductDetails";
+import ProductInfo from "./product/ProductInfo";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -37,6 +38,7 @@ const ProductsPage = () => {
           price={product.price}
           discount={product.discount}
         />
+        <ProductInfo description={product.description} />
       </div>
     </div>
   ) : (

@@ -40,8 +40,13 @@
 
 .title {
   color: #0a1e35;
-  margin-bottom: 2rem;
   font-weight: 500;
+}
+
+.category {
+  display: block;
+  color: #666;
+  margin-bottom: 2rem;
 }
 
 .rate {
@@ -161,5 +166,14 @@
 
   .rightDetails , .leftDetails {
     flex: 0 0 100%;
+  }
+
+  .rightDetails {
+    margin-bottom: 2rem;
+  }
+
+  .addToCartBtn {
+    padding: 10px;
+    font-size: 1.3rem;
   }
 }
