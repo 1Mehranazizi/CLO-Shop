@@ -8,6 +8,7 @@ import { productsAPI } from "../services/api";
 import BreadCrumb from "./product/BreadCrumb";
 import ProductDetails from "./product/ProductDetails";
 import ProductInfo from "./product/ProductInfo";
+import Comments from "./product/Comments";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -39,6 +40,7 @@ const ProductsPage = () => {
           discount={product.discount}
         />
         <ProductInfo description={product.description} />
+        <Comments />
       </div>
     </div>
   ) : (
