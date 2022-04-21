@@ -9,6 +9,7 @@ import BreadCrumb from "./product/BreadCrumb";
 import ProductDetails from "./product/ProductDetails";
 import ProductInfo from "./product/ProductInfo";
 import Comments from "./product/Comments";
+import Loading from "./shared/Loading";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -44,7 +45,7 @@ const ProductsPage = () => {
       </div>
     </div>
   ) : (
-    "Loading..."
+    <Loading />
   );
 };
 
