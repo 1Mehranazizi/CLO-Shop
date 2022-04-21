@@ -91,11 +91,25 @@
   display: flex;
   margin-right: 10px;
   align-items: center;
+  position: relative;
 }
 
 .buttons .cart img {
   width: 16px;
   margin-right: 5px;
+}
+
+.itemCounter {
+  position: absolute;
+  top:-5px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #fa4c4c;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-family: iranyekan;
 }
 
 .border {

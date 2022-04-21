@@ -25,7 +25,7 @@ const ProductsPage = () => {
   const id = useParams().id;
   const product = products[id - 1];
   const relatedPro = products.filter(
-    (item) => item.category === product.category
+    (item) => item.category === product.category && item.id !== product.id
   );
   return product ? (
     <div className="products-page">
@@ -35,15 +35,7 @@ const ProductsPage = () => {
           category={product.category}
           title={product.title}
         />
-        <ProductDetails
-          image={product.image}
-          title={product.title}
-          rate={product.rate}
-          description={product.description}
-          category={product.category}
-          price={product.price}
-          discount={product.discount}
-        />
+        <ProductDetails data={product} />
         <ProductInfo description={product.description} />
         <Comments />
         <RelatedProduct data={relatedPro} />

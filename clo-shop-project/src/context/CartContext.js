@@ -1,0 +1,87 @@
+import React, { useReducer, createContext } from "react";
+
+const initialState = {
+  selectedItem: [],
+  itemCounter: 0,
+  total: 0,
+  checkOut: false,
+};
+
+const sumProduct = (items) => {
+  const itemCounter = items.reduce(
+    (total, product) => total + product.quantity,
+    0
+  );
+  const total = items
+    .reduce((total, product) => total + product.price * product.quantity, 0)
+    .toFixed(2);
+  return { itemCounter, total };
+};
+
+const cartReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_ITEM":
+      if (!state.selectedItem.find((item) => item.id === action.payload.id)) {
+        state.selectedItem.push({ ...action.payload, quantity: 1 });
+      }
+      return {
+        ...state,
+        selectedItem: [...state.selectedItem],
+        ...sumProduct(state.selectedItem),
+      };
+
+    case "REMOVE_ITEM":
+      const newSelectedItem = state.selectedItem.filter(
+        (item) => item.id !== action.payload.id
+      );
+      return {
+        ...state,
+        ...sumProduct(newSelectedItem),
+        selectedItem: [...newSelectedItem],
+      };
+
+    case "PLUS_ONE":
+      const indexItem1 = state.selectedItem.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      state.selectedItem[indexItem1].quantity++;
+      return {
+        ...state,
+        ...sumProduct(state.selectedItem),
+      };
+
+    case "MINUS_ONE":
+      const indexItem2 = state.selectedItem.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      state.selectedItem[indexItem2].quantity--;
+      return {
+        ...state,
+        ...sumProduct(state.selectedItem),
+      };
+
+    case "CHECKED_OUT":
+      return {
+        selectedItem: [],
+        itemCounter: 0,
+        total: 0,
+        checkout: true,
+      };
+    default:
+      return state;
+  }
+};
+
+export const CartContextProvider = createContext();
+
+const CartContext = ({ children }) => {
+  const [state, dispatch] = useReducer(cartReducer, initialState);
+
+  return (
+    <CartContextProvider.Provider value={{ state, dispatch }}>
+      {children}
+    </CartContextProvider.Provider>
+  );
+};
+
+export default CartContext;
