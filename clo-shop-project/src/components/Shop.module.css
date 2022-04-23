@@ -1,0 +1,20 @@
+.shopPage {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filterContainer {
+    flex:0 0 30%;
+    padding: 0 15px;
+}
+
+.mainContainer {
+    flex: 0 0 70%;
+    padding: 0 15px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}

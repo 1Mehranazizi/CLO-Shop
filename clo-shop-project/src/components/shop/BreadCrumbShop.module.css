@@ -1,0 +1,47 @@
+.container {
+    padding: 0 15px;
+}
+
+.breadcrumb {
+    padding:1.2rem ;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(120, 120, 120, .3);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.breadcrumb a {
+    color: #666;
+}
+
+.breadcrumb .pages {
+    color: #5463FF;
+}
+
+.filter {
+    display: flex;
+}
+
+.filter p {
+    color: #444;
+    margin-left: 5px;
+}
+
+.selector .deactive {
+    padding: 8px 15px;
+    background-color: rgba(84, 98, 255, 0.26);
+    margin-left: 8px;
+    border-radius: 10px;
+    color: #444;
+    cursor: pointer;
+}
+
+.active {
+    padding: 8px 15px;
+    background-color: #5463FF;
+    margin-left: 8px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}

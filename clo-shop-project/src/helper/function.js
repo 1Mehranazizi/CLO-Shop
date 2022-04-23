@@ -12,4 +12,5 @@ const isInCart = (state, id) => {
     return result;
   };
 
+
 export { quantityItem , isInCart };

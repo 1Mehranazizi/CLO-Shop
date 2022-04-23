@@ -11,6 +11,7 @@
 
 .cardImage {
   text-align: center;
+  position: relative;
 }
 
 .cardImage img {
@@ -59,8 +60,8 @@
   width: 35px;
   height: 35px;
   line-height: 35px;
-  top: 1rem;
-  left: 1rem;
+  top: 0;
+  left: 0;
   font-size: 1rem;
   background-image: url("../../assets/img/discount.png");
   background-size: cover;

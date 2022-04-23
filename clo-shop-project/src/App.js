@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
 import ProductsPage from "./components/ProductsPage";
 import CartContext from "./context/CartContext";
+import Shop from "./components/Shop";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <CartContext>
           <Navbar />
           <Routes>
+            <Route path="/shop" element={<Shop />} />
             <Route path="/products/:id" element={<ProductsPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/*" element={<Navigate to="/" />} />
