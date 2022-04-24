@@ -57,7 +57,7 @@ const Navbar = () => {
               <Link to="/">صفحه اصلی</Link>
             </li>
             <li className={styles.navitem}>
-              <Link to="/products">فروشگاه</Link>
+              <Link to="/shop">فروشگاه</Link>
             </li>
             <li className={styles.navitem}>
               <Link to="/blogs">مقالات</Link>

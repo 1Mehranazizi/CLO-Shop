@@ -4,22 +4,11 @@ import { Link } from "react-router-dom";
 //Styles
 import styles from "./ProductCard.module.css";
 
+//Functions
+import { discountHandler } from "../../helper/function";
+import { rateHandler } from "../../helper/function";
+
 const ProductCard = ({ data }) => {
-  const discountHandler = (discount, price) => {
-    const decimal = discount / 100;
-    const discountNum = decimal * price;
-    const newPrice = price - discountNum;
-    return newPrice.toLocaleString();
-  };
-
-  const rateHandler = (rateCount) => {
-      for(let i=0 ; i < rateCount ; i++) {
-          const rateX = rateCount / 5 *100;
-          const rateY = `${rateX /10 *10}%`;
-          return rateY; 
-      }
-  }
-
   return (
     <div className={styles.productCard}>
       <div className={styles.cardImage}>
