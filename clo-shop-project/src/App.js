@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import ProductsPage from "./components/ProductsPage";
 import CartContext from "./context/CartContext";
 import Shop from "./components/Shop";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <CartContext>
           <Navbar />
           <Routes>
+            <Route path="/cart" element={<Cart />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/products/:id" element={<ProductsPage />} />
             <Route path="/" element={<HomePage />} />

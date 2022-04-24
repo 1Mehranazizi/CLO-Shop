@@ -1,3 +1,5 @@
+import {toast} from "react-toastify";
+
 const quantityItem = (state, id) => {
   const indexItem = state.selectedItem.findIndex((item) => item.id === id);
   if (indexItem === -1) {
@@ -27,4 +29,16 @@ const rateHandler = (rateCount) => {
   }
 }
 
-export { quantityItem, isInCart , discountHandler , rateHandler };
+const notify = () => {
+  toast.success("test", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
+}
+
+export { quantityItem, isInCart , discountHandler , rateHandler , notify };

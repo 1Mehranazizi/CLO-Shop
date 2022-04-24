@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 //Styles
 import styles from "./ProductDetails.module.css";
@@ -8,7 +8,6 @@ import { CartContextProvider } from "../../context/CartContext";
 
 //Function
 import { quantityItem, isInCart } from "../../helper/function";
-
 
 const ProductDetails = ({ data }) => {
   const rateHandler = (rateCount) => {
@@ -27,6 +26,8 @@ const ProductDetails = ({ data }) => {
   };
 
   const { state, dispatch } = useContext(CartContextProvider);
+
+  const [sizes, setSizes] = useState("");
   return (
     <div className={styles.productDetails}>
       <div className={styles.productImage}>
@@ -52,7 +53,12 @@ const ProductDetails = ({ data }) => {
             <label htmlFor="size">
               {data.description.size ? "سایز :" : "رنگ :"}
             </label>
-            <select id="size">
+            <select id="size" onChange={(e) => setSizes(e.target.value)}>
+              <option value="">
+                {data.description
+                  ? "انتخاب سایز مورد نظر"
+                  : "انتخاب رنگ مورد نظر"}
+              </option>
               {data.description.size
                 ? data.description.size.map((item) => (
                     <option key={item} value={item}>
@@ -85,7 +91,13 @@ const ProductDetails = ({ data }) => {
               <p>قیمت با احتساب تخفیف :</p>
               <p>{discountHandler(data.discount, data.price)}</p>
             </div>
-            <div className={isInCart(state, data.id) ? styles.plusMinusProduct : styles.addToCart}>
+            <div
+              className={
+                isInCart(state, data.id)
+                  ? styles.plusMinusProduct
+                  : styles.addToCart
+              }
+            >
               {isInCart(state, data.id) ? (
                 <button
                   className={styles.smallBtn}
@@ -96,7 +108,15 @@ const ProductDetails = ({ data }) => {
               ) : (
                 <button
                   className={styles.addToCartBtn}
-                  onClick={() => dispatch({ type: "ADD_ITEM", payload: data })}
+                  onClick={() =>
+                    dispatch({
+                      type: "ADD_ITEM",
+                      payload: data,
+                      size: data.description.size
+                        ? `سایز : ${sizes}`
+                        : `رنگ : ${sizes}`,
+                    })
+                  }
                 >
                   افزودن به سبد خرید
                 </button>

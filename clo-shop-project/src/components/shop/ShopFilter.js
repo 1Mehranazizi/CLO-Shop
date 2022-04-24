@@ -70,17 +70,11 @@ const ShopFilter = ({ filtered, filterHandler }) => {
           </div>
         </div>
       </div>
-      <div className={filterMenu ? styles.closeFilter : styles.buttonFilter} onClick={filterMenuHandler}>
-        {filterMenu ? (
-        <div>
-          
-          <i className="fas fa-times"></i>
-        </div>) : (
+      <div className={styles.buttonFilter} onClick={filterMenuHandler}>
         <div>
           فیلتر
           <i className="fas fa-filter"></i>
-        </div>)}
-        
+        </div>
       </div>
     </>
   );

@@ -22,12 +22,13 @@ const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_ITEM":
       if (!state.selectedItem.find((item) => item.id === action.payload.id)) {
-        state.selectedItem.push({ ...action.payload, quantity: 1 });
+        state.selectedItem.push({ ...action.payload, quantity: 1 , size:action.size });
       }
       return {
         ...state,
         selectedItem: [...state.selectedItem],
         ...sumProduct(state.selectedItem),
+        checkOut:false
       };
 
     case "REMOVE_ITEM":
