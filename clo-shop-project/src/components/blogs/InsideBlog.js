@@ -8,6 +8,9 @@ import styles from "./InsideBlog.module.css";
 //Loading
 import Loading from "../shared/Loading";
 
+//Components 
+import BreadcrumbBlog from "./BreadcrumbBlogs";
+
 const URL = "https://testapi.io/api/mehranazizi79/blogs";
 
 const InsideBlog = () => {
@@ -27,6 +30,7 @@ const InsideBlog = () => {
     <>
       {blog ? (
         <div className="container">
+          <BreadcrumbBlog blog={blog.title} />
           <div className={styles.insideBlog}>
             <div className={styles.info}>
               <span>نویسنده : {blog.author}</span>
