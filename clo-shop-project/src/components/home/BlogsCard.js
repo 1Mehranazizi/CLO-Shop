@@ -7,7 +7,7 @@ import styles from "./BlogsCard.module.css";
 //Components
 import BlogCard from "../shared/BlogCard";
 
-const URL = "https://testapi.io/api/mehranazizi79/blogs";
+const URL = "https://testapi.io/api/mehran1984/blogs";
 
 const BlogsCard = () => {
   const [blogs, setBlogs] = useState([]);

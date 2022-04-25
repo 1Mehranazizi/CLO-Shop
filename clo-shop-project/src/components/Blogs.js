@@ -9,7 +9,7 @@ import BreadcrumbBlogs from "./blogs/BreadcrumbBlogs";
 import AnyBlog from "./blogs/AnyBlog";
 import Loading from "./shared/Loading";
 
-const URL = "https://testapi.io/api/mehranazizi79/blogs";
+const URL = "https://testapi.io/api/mehran1984/blogs";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);

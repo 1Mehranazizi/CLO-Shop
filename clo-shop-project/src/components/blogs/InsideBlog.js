@@ -11,7 +11,7 @@ import Loading from "../shared/Loading";
 //Components 
 import BreadcrumbBlog from "./BreadcrumbBlogs";
 
-const URL = "https://testapi.io/api/mehranazizi79/blogs";
+const URL = "https://testapi.io/api/mehran1984/blogs";
 
 const InsideBlog = () => {
   const [blogs, setBlogs] = useState([]);
