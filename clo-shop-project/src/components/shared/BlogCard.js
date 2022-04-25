@@ -13,7 +13,7 @@ const BlogCard = ({ data }) => {
         <p>{data.description.substring(0, 100).concat("...")}</p>
       </div>
       <div className={styles.cardFooter}>
-        <Link to="/" className={styles.link}>
+        <Link to={`/blogs/${data.id}`} className={styles.link}>
           ادامه مطلب
         </Link>
       </div>
