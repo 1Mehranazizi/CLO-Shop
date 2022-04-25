@@ -14,6 +14,7 @@ import InsideBlog from "./components/blogs/InsideBlog";
 import Login from "./components/Login";
 import SignUp from "./components/SingUp";
 import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <CartContext>
           <Navbar />
           <Routes>
+            <Route path="/contactus" element={<ContactUs />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
