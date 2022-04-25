@@ -29,16 +29,28 @@ const rateHandler = (rateCount) => {
   }
 }
 
-const notify = () => {
-  toast.success("test", {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
+const notify = (type) => {
+  if (type === "seccus") {
+    toast.success("شما با موفیقت وارد شدید", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
     });
-}
+  } else {
+    toast.error("ورود شما ناموفق بود لطفا دوباره تلاش کنید", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  }
+};
 
 export { quantityItem, isInCart , discountHandler , rateHandler , notify };

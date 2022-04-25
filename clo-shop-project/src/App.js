@@ -11,6 +11,8 @@ import Shop from "./components/Shop";
 import Cart from "./components/Cart";
 import Blogs from "./components/Blogs";
 import InsideBlog from "./components/blogs/InsideBlog";
+import Login from "./components/Login";
+import SignUp from "./components/SingUp";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <CartContext>
           <Navbar />
           <Routes>
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:id" element={<InsideBlog />} />
             <Route path="/cart" element={<Cart />} />
