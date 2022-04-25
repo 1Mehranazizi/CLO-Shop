@@ -9,6 +9,10 @@
     padding: 0 15px;
 }
 
+.center {
+    flex: 0 0 100%;
+}
+
 .left {
     flex: 0 0 30%;
     padding: 0 15px;
@@ -42,3 +46,17 @@
 .empty a {
     color: #5463FF;
 }
+
+@media(max-width:990px) {
+    .right , .left {
+        flex:0 0 100% ;
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+}
+
+@media(max-width:560px) {
+    .CartProducts{
+        padding: .5rem;
+    }
+  }

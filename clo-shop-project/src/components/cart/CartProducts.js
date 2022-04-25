@@ -7,7 +7,6 @@ import styles from "./CartProducts.module.css";
 import { discountHandler, quantityItem } from "../../helper/function";
 
 const CartProducts = ({ productData, dispatch, state }) => {
-  console.log(productData);
   return (
     <div className={styles.products}>
       <div className={styles.info}>
@@ -27,7 +26,7 @@ const CartProducts = ({ productData, dispatch, state }) => {
             </p>
             {productData.discount > 0 && (
               <p className={styles.newPrice}>
-                {discountHandler(productData.discount, productData.price)}
+                {discountHandler(productData.discount, productData.price).toLocaleString()}
                 <span>تومان</span>
               </p>
             )}

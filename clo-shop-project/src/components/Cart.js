@@ -16,11 +16,10 @@ import cartEmpty from "../assets/img/empty-cart.svg";
 
 const Cart = () => {
   const { state, dispatch } = useContext(CartContextProvider);
-  console.log(state.selectedItem)
   return (
     <div className="container">
       <div className={styles.cartPage}>
-        <div className={styles.right}>
+        <div className={state.selectedItem.length ? styles.right : styles.center}>
           <div className={styles.CartProducts}>
             <div className={styles.header}>
               <h3>سبد خرید شما</h3>
@@ -44,9 +43,11 @@ const Cart = () => {
             )}
           </div>
         </div>
-        <div className={styles.left}>
-          <CartPay data={state} dispatch={dispatch} />
-        </div>
+        {state.total > 0 && (
+          <div className={styles.left}>
+            <CartPay data={state} dispatch={dispatch} />
+          </div>
+        )}
       </div>
     </div>
   );

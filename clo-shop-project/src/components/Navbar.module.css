@@ -243,4 +243,7 @@
   .container {
     padding: 0 10px;
   }
+  .search {
+    flex: 0 048%;
+  }
 }

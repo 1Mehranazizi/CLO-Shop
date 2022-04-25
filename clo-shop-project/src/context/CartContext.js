@@ -1,5 +1,8 @@
 import React, { useReducer, createContext } from "react";
 
+//Fuctions
+import { discountHandler } from "../helper/function";
+
 const initialState = {
   selectedItem: [],
   itemCounter: 0,
@@ -13,8 +16,7 @@ const sumProduct = (items) => {
     0
   );
   const total = items
-    .reduce((total, product) => total + product.price * product.quantity, 0)
-    .toFixed(2);
+    .reduce((total, product) => total + discountHandler(product.discount , product.price) * product.quantity, 0);
   return { itemCounter, total };
 };
 

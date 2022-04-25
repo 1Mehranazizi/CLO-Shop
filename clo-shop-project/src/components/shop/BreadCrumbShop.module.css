@@ -23,6 +23,7 @@
 .sort {
   display: flex;
   color: #444;
+  align-items: center;
 }
 
 .selector {

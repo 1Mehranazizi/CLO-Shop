@@ -8,11 +8,11 @@ const CartPay = ({data, dispatch}) => {
     <div className={styles.pay}>
       <div className={styles.price}>
         <p>قیمت کالاها</p>
-        <p>{data.total} تومان</p>
+        <p>{data.total.toLocaleString()} تومان</p>
       </div>
       <div className={styles.totalPrice}>
         <p>جمع سبد خرید</p>
-        <p>{data.total} تومان</p>
+        <p>{data.total.toLocaleString()} تومان</p>
       </div>
       <small>
         هزینه ارسال براساس آدرس، زمان تحویل، وزن و حجم مرسوله شما محاسبه می‌شود

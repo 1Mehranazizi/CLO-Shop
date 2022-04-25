@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 //Styles
 import styles from "./Shop.module.css";
@@ -15,11 +16,13 @@ import BreadCrumbShop from "./shop/BreadCrumbShop";
 import ShopFilter from "./shop/ShopFilter";
 
 const Shop = () => {
+  const categoryParams = useParams().category;
+  
   const [products, setProducts] = useState([]);
   const [filtered , setFiltered] = useState({
     sortBy:"date",
     search:"",
-    category:"",
+    category:categoryParams ? categoryParams : "",
     fromPrice:0,
     toPrice:999999999,
   })

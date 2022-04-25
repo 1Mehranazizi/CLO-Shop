@@ -18,7 +18,7 @@ const discountHandler = (discount, price) => {
   const decimal = discount / 100;
   const discountNum = decimal * price;
   const newPrice = price - discountNum;
-  return newPrice.toLocaleString();
+  return newPrice;
 };
 
 const rateHandler = (rateCount) => {

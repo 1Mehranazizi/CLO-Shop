@@ -9,6 +9,8 @@ import ProductsPage from "./components/ProductsPage";
 import CartContext from "./context/CartContext";
 import Shop from "./components/Shop";
 import Cart from "./components/Cart";
+import Blogs from "./components/Blogs";
+import InsideBlog from "./components/blogs/InsideBlog";
 
 function App() {
   return (
@@ -17,7 +19,10 @@ function App() {
         <CartContext>
           <Navbar />
           <Routes>
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:id" element={<InsideBlog />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/shop/:category" element={<Shop />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/products/:id" element={<ProductsPage />} />
             <Route path="/" element={<HomePage />} />
