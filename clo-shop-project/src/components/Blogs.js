@@ -24,7 +24,7 @@ const Blogs = () => {
   return (
     <div className="container">
       <BreadcrumbBlogs />
-      <div className={styles.blogs}>
+      <div className={blogs.length ? styles.blogs : ""}>
         {blogs.length ? (
           blogs.map((blog) => <AnyBlog key={blog.id} data={blog} />)
         ) : (

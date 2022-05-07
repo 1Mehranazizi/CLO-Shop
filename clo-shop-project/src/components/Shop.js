@@ -17,16 +17,16 @@ import ShopFilter from "./shop/ShopFilter";
 
 const Shop = () => {
   const categoryParams = useParams().category;
-  
+
   const [products, setProducts] = useState([]);
-  const [filtered , setFiltered] = useState({
-    sortBy:"date",
-    search:"",
-    category:categoryParams ? categoryParams : "",
-    fromPrice:0,
-    toPrice:999999999,
-  })
-  let newProducts = products
+  const [filtered, setFiltered] = useState({
+    sortBy: "date",
+    search: "",
+    category: categoryParams ? categoryParams : "",
+    fromPrice: 0,
+    toPrice: 999999999,
+  });
+  let newProducts = products;
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -35,10 +35,12 @@ const Shop = () => {
     fetchAPI();
   }, []);
 
-//Filters function
+  //Filters function
   const shopFilterProducts = (state) => {
     if (state.sortBy === "date") {
-      newProducts = newProducts.sort((a, b) => parseFloat(b.date) - parseFloat(a.date));
+      newProducts = newProducts.sort(
+        (a, b) => parseFloat(b.date) - parseFloat(a.date)
+      );
     }
     if (state.sortBy === "price") {
       newProducts = newProducts.sort(
@@ -51,7 +53,9 @@ const Shop = () => {
       );
     }
     if (state.search.length) {
-      newProducts = newProducts.filter((product) => product.title.includes(state.search));
+      newProducts = newProducts.filter((product) =>
+        product.title.includes(state.search)
+      );
     }
     if (state.category.length) {
       newProducts = newProducts.filter(
@@ -69,26 +73,32 @@ const Shop = () => {
   shopFilterProducts(filtered);
 
   const filterHandler = (event) => {
-    if(event.target.name === "search" || event.target.name === "fromPrice" || event.target.name === "toPrice") {
-      setFiltered({...filtered , [event.target.name] : event.target.value});
+    if (
+      event.target.name === "search" ||
+      event.target.name === "fromPrice" ||
+      event.target.name === "toPrice"
+    ) {
+      setFiltered({ ...filtered, [event.target.name]: event.target.value });
+    } else {
+      setFiltered({
+        ...filtered,
+        [event.target.id.split(" ")[0]]: event.target.id.split(" ")[1],
+      });
     }
-    else {
-      setFiltered({...filtered , [event.target.id.split(" ")[0]] : event.target.id.split(" ")[1]})
-    }
-  }
-  
+  };
+
   return (
     <div className="container">
       <BreadCrumbShop filtered={filtered} filterHandler={filterHandler} />
       <div className={styles.shopPage}>
         <aside className={styles.filterContainer}>
           <div className={styles.fiter}>
-            <ShopFilter filtered={filtered} filterHandler={filterHandler}/>
+            <ShopFilter filtered={filtered} filterHandler={filterHandler} />
           </div>
         </aside>
         <main className={styles.mainContainer}>
-          <div className={styles.products}>
-            { newProducts.length > 0 ? (
+          <div className={newProducts.length > 0 ? styles.products : ""}>
+            {newProducts.length > 0 ? (
               newProducts.map((product) => (
                 <ProductCard data={product} key={product.id} />
               ))
